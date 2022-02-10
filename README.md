@@ -1,4 +1,4 @@
 # simple-python-blockchain
 A simple block-chain written in python with flask
 # TODO
-Write up README
+Summarise project and write the readme
