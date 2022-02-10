@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+{% for block in chain|reverse %}
+
+  <strong> Block Hash: {{block[0]}} </strong><br>
+    {% for key,value in block[1].items() %}
+      {{ key }} : {{ value }}<br>
+    {% endfor %}
+{% endfor %}
+
+</body>
+
+{% endblock %}

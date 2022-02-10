@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<form action= "" method="post" novalidate>
+  {{ form.hidden_tag() }}
+
+  <p> {{ form.address.label}}     <br>
+      {{form.address(size=128)}}  <br>
+  </p>
+
+  {{ form.submit() }}
+
+  <p> {% if balance %}
+        {{ address }} : <span style="color: green;">{{ balance }}</span>
+      {% endif %}
+  </p>
+
+{% endblock %}

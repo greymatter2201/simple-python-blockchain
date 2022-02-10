@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    {% if title %}
+    <title> {{ title }} Python Blockchain</title>
+    {% else %}
+    <title> Python Blockchain </title>
+    {% endif %}
+  </head>
+
+  <body>
+    <div> <a href="{{ url_for('index')}}">Home</a>
+          <a href="{{ url_for('transfer')}}">Transactions</a>
+          <a href="{{ url_for('chain')}}">Chain</a>
+          <a href="{{ url_for('generate')}}">Generate</a>
+          <a href="{{ url_for('balance')}}">Balance</a>
+    </div>
+  </body>
+
+    <hr>
+    {% block content %}{% endblock %}
+
+</html>
