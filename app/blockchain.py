@@ -49,9 +49,11 @@ class Blockchain:
         }
         return block
 
-    @staticmethod
-    def generate_keys(password):
+    def generate_keys(self, password):
         public_key = keys.gen_key_pem(password)
+        if not self.global_balances:
+            key = public_key.splitlines()[1].decode()
+            self.global_balances[key] = 100
         return public_key
 
     def _mine(self, block):
