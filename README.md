@@ -40,9 +40,11 @@ to transfer some coins to the recipient.
 - You can also go to /balance to look up the balances of a public key.
 ### Generate
 Enter a password to generate public and private key to be used.
+
 ".pem" file containing encrypted private key will be generated onto the local directory.
 ### Transaction
-Transfer "coins" to a recipient's public key
+Transfer "coins" to a recipient's public key.
+
 The transaction will still be created regardless of wrong password or not having the enough amount. It will just not be added onto the chain.
 ### Chain
 View all blocks that are added onto the chain.
