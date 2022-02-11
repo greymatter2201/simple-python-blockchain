@@ -35,7 +35,7 @@ By default flask will run on //localhost:5000
 --  First key created on the chain receives "50" coins.
 
 - On the /transactions page, enter the same password, a recipient address and an amount 
-to transfer some coins to another address.
+to transfer some coins to the recipient.
 - Navigate to /chain to look view the transaction.
 - You can also go to /balance to look up the balances of a public key.
 ### Generate
