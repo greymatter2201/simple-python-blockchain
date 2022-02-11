@@ -1,5 +1,4 @@
 # Simple (naive?) Python Blockchain with flask
-## 
 ## Features
 - Key Signing/Verification
 - Public/Private Key Generation
