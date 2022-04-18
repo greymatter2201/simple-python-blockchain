@@ -9,7 +9,6 @@
 ## To-do
 - Longest Chain Consensus 
 - Proof of Work (Currently, blocks are added onto the chain with PoW but no ability to validate the work yet)
-- Ability to add other nodes (P2P)
 - Improve error handling
 
 ## Installation
