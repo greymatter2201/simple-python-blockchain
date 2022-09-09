@@ -30,7 +30,7 @@ flask run
 ```
 By default flask will run on //localhost:5000
 
-##Docker
+## Docker
 
 Build the image
 ```
