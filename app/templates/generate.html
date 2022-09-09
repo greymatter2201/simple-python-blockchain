@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+  
+    <p> {{ form.password.label}}<br>
+        {{form.password(size=32)}}<br>
+        {% for error in form.password.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+  
+    <p> {% with messages = get_flashed_messages(category_filter=["generate"]) %}
+      {% if messages %}
+        {% for message in messages %}
+          <span style="color: green;">{{ message }}</span>
+        {% endfor %}
+      {% endif %}
+    {% endwith %} </p>
+    <p> {% if keys %}
+          Your public key is : {{ keys }}
+        {% endif %}
+    </p>
+
+    {{ wtf.form_field(form.generate, class="btn btn-success") }}
+
+  </form>
+{% endblock %}

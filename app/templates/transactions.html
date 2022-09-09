@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<div class="container-fluid py-4">
+    <div class="row my-4">
+      <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
+        <div class="card">
+          <div class="card-header pb-0">
+            <div class="row">
+          </div>
+          <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">From</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">To</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    {% for block in chain|reverse %}
+                    {% set tx = block[1]['transactions'][0] %}
+                    {% if tx %}
+                    <td class="align-middle text-info text-left text-sm">
+                      <h6 class="mb-0 text-sm">{{ tx[2]['sender'] }}</h6>
+                    </td>
+                      <td class="align-middle text-info text-left text-sm">
+                        <h6 class="mb-0 text-sm">{{ tx[2]['recipient'] }}</h6>
+                      </td>
+                      <td class="align-middle text-info text-center text-sm">
+                        <h6 class="mb-0 text-sm">{{ tx[2]['amount'] }}</h6>
+                      </td>
+                    {% endif %}
+                  {% endfor %}
+                  </tr> 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

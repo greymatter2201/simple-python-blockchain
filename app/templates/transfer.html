@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<form action= "" method="post" novalidate>
+{{ form.hidden_tag() }}
+<p> {{ form.password.label}}<br>
+    {{form.password(size=32)}}<br>
+    {% for error in form.password.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+
+<p> {{ form.recipient.label}}<br>
+    {{form.recipient(size=32)}}<br>
+    {% for error in form.recipient.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+
+<p> {{ form.amount.label}}<br>
+    {{form.amount(size=32)}}<br>
+    {% for error in form.recipient.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+</p>
+<p> {% with messages = get_flashed_messages(category_filter=["transactions"]) %}
+    {% if messages %}
+    {% for message in messages %}
+        <span style="color: green;">{{ message }}</span>
+    {% endfor %}
+    {% endif %}
+{% endwith %} </p>
+
+{{ wtf.form_field(form.transfer, class="btn btn-success") }}
+
+</form>
+{% endblock %}
